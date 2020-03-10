@@ -1,0 +1,238 @@
+@import url(stylesheet.css),
+url(normalize.css),
+'mixin',
+'variables';
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lucida Sans Unicode';
+    color: $text-color;
+    font-size: 18px;
+}
+
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 40px 15% 140px;
+    background: $bg-color;
+}
+
+.header {
+    margin-bottom: 30px;
+    margin: 0 auto;
+    max-width: 940px;
+    padding-bottom: 30px;
+}
+
+.wheather {
+    @include row;
+    &:hover {
+        a {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+    &__item {
+        @include col(3, 12);
+        opacity: 1;
+        transition: opacity 0.1s ease-in;
+        padding: 25px 0;
+        position: relative;
+        border: 0px solid $border-color;
+        display: inline-block;
+        &:hover a {
+            background: rgba(255, 255, 255, 0);
+        }
+        &:hover {
+            opacity: 1 !important;
+        }
+        &:nth-child(1) {
+            @include col(6, 12);
+            background: $item1-color;
+            border-width: $border-width $border-width 0 $border-width;
+        }
+        &:nth-child(2) {
+            background: $item2-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(3) {
+            background: $item3-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(4) {
+            background: $item4-color;
+            border-width: $border-width $border-width 0 $border-width;
+        }
+        &:nth-child(5) {
+            background: $item5-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(6) {
+            background: $item6-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(7) {
+            background: $item7-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(8) {
+            background: $item8-color;
+            border-width: $border-width $border-width 0 $border-width;
+        }
+        &:nth-child(9) {
+            @include col(6, 12);
+            background: $item9-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(10) {
+            background: $item10-color;
+            border-width: $border-width $border-width 0 0;
+        }
+        &:nth-child(11) {
+            @include col(12, 12);
+            background: $item11-color;
+            border-width: $border-width $border-width $border-width $border-width;
+            & a {
+                width: 100%;
+            }
+        }
+        & svg {
+            @include col(6, 12);
+            height: 45px;
+            width: 45px;
+            fill: $svg-color;
+        }
+        & a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 101%;
+            height: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0);
+            transition: all 0.3s ease-in;
+        }
+    }
+    &__city {
+        @include col(12, 12);
+    }
+    &__heat {
+        @include col(6, 12);
+        width: 45px;
+        display: inline-block;
+        margin-top: 15px;
+        color: $svg-color;
+    }
+}
+
+.footer {
+    padding-top: 30px;
+    margin: 0 auto;
+    max-width: 940px;
+}
+
+@media screen and (max-width: 800px) {
+    .wheather {
+        &__item {
+            @include col(4, 12);
+            &:nth-child(2) {
+                @include col(6, 12)
+            }
+            &:nth-child(3) {
+                border-width: $border-width $border-width 0 $border-width;
+            }
+            &:nth-child(4) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(5) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(6) {
+                border-width: $border-width $border-width 0 $border-width;
+            }
+            &:nth-child(7) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(8) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(9) {
+                @include col(8, 12);
+                border-width: $border-width $border-width 0 $border-width;
+            }
+            &:nth-child(10) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(11) {
+                @include col(12, 12);
+                border-width: $border-width $border-width $border-width $border-width;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header {
+        text-align: center;
+    }
+    .wheather {
+        &__item {
+            @include col(6, 12);
+            &:nth-child(n) {
+                border-width: $border-width $border-width 0 $border-width;
+            }
+            &:nth-child(2n) {
+                border-width: $border-width $border-width 0 0;
+            }
+            &:nth-child(2) {
+                @include col(6, 12)
+            }
+            &:nth-child(9) {
+                @include col(6, 12);
+                border-width: $border-width $border-width 0 $border-width;
+            }
+            &:nth-child(11) {
+                @include col(12, 12);
+                border-width: $border-width $border-width $border-width $border-width;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .wheather {
+        &__item {
+            &:nth-child(n) {
+                @include col(12, 12);
+                border-width: $border-width $border-width 0 $border-width;
+                & a {
+                    width: 101%;
+                    left: -1px;
+                }
+            }
+            &:nth-child(11) {
+                border-width: $border-width $border-width $border-width $border-width;
+            }
+        }
+    }
+    .footer {
+        text-align: center;
+    }
+}
