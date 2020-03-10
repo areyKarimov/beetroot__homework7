@@ -31,7 +31,8 @@ ul {
 }
 
 .container {
-    padding: 40px 15% 140px;
+    padding: 40px 15% 50px;
+    height: 100vh;
     background: $bg-color;
 }
 
@@ -44,6 +45,7 @@ ul {
 
 .wheather {
     @include row;
+    border: 3px solid $border-color;
     &:hover {
         a {
             background: rgba(255, 255, 255, 0.5);
@@ -55,7 +57,7 @@ ul {
         transition: opacity 0.1s ease-in;
         padding: 25px 0;
         position: relative;
-        border: 0px solid $border-color;
+        border: 2px solid $border-color;
         display: inline-block;
         &:hover a {
             background: rgba(255, 255, 255, 0);
@@ -66,49 +68,38 @@ ul {
         &:nth-child(1) {
             @include col(6, 12);
             background: $item1-color;
-            border-width: $border-width $border-width 0 $border-width;
         }
         &:nth-child(2) {
             background: $item2-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(3) {
             background: $item3-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(4) {
             background: $item4-color;
-            border-width: $border-width $border-width 0 $border-width;
         }
         &:nth-child(5) {
             background: $item5-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(6) {
             background: $item6-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(7) {
             background: $item7-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(8) {
             background: $item8-color;
-            border-width: $border-width $border-width 0 $border-width;
         }
         &:nth-child(9) {
             @include col(6, 12);
             background: $item9-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(10) {
             background: $item10-color;
-            border-width: $border-width $border-width 0 0;
         }
         &:nth-child(11) {
             @include col(12, 12);
             background: $item11-color;
-            border-width: $border-width $border-width $border-width $border-width;
             & a {
                 width: 100%;
             }
@@ -139,6 +130,10 @@ ul {
         display: inline-block;
         margin-top: 15px;
         color: $svg-color;
+        & sup {
+            display: inline-block;
+            font-size: 10px;
+        }
     }
 }
 
@@ -155,34 +150,11 @@ ul {
             &:nth-child(2) {
                 @include col(6, 12)
             }
-            &:nth-child(3) {
-                border-width: $border-width $border-width 0 $border-width;
-            }
-            &:nth-child(4) {
-                border-width: $border-width $border-width 0 0;
-            }
-            &:nth-child(5) {
-                border-width: $border-width $border-width 0 0;
-            }
-            &:nth-child(6) {
-                border-width: $border-width $border-width 0 $border-width;
-            }
-            &:nth-child(7) {
-                border-width: $border-width $border-width 0 0;
-            }
-            &:nth-child(8) {
-                border-width: $border-width $border-width 0 0;
-            }
             &:nth-child(9) {
                 @include col(8, 12);
-                border-width: $border-width $border-width 0 $border-width;
-            }
-            &:nth-child(10) {
-                border-width: $border-width $border-width 0 0;
             }
             &:nth-child(11) {
                 @include col(12, 12);
-                border-width: $border-width $border-width $border-width $border-width;
             }
         }
     }
@@ -195,22 +167,14 @@ ul {
     .wheather {
         &__item {
             @include col(6, 12);
-            &:nth-child(n) {
-                border-width: $border-width $border-width 0 $border-width;
-            }
-            &:nth-child(2n) {
-                border-width: $border-width $border-width 0 0;
-            }
             &:nth-child(2) {
                 @include col(6, 12)
             }
             &:nth-child(9) {
                 @include col(6, 12);
-                border-width: $border-width $border-width 0 $border-width;
             }
             &:nth-child(11) {
                 @include col(12, 12);
-                border-width: $border-width $border-width $border-width $border-width;
             }
         }
     }
@@ -221,14 +185,10 @@ ul {
         &__item {
             &:nth-child(n) {
                 @include col(12, 12);
-                border-width: $border-width $border-width 0 $border-width;
                 & a {
                     width: 101%;
                     left: -1px;
                 }
-            }
-            &:nth-child(11) {
-                border-width: $border-width $border-width $border-width $border-width;
             }
         }
     }
